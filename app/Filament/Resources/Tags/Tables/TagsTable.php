@@ -13,7 +13,8 @@ class TagsTable
     {
         return $table
             ->columns([
-                //
+                \Filament\Tables\Columns\TextColumn::make('name')->searchable(),
+                \Filament\Tables\Columns\TextColumn::make('slug'),
             ])
             ->filters([
                 //

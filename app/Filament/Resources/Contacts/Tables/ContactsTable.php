@@ -13,7 +13,11 @@ class ContactsTable
     {
         return $table
             ->columns([
-                //
+                \Filament\Tables\Columns\TextColumn::make('name')->searchable(),
+                \Filament\Tables\Columns\TextColumn::make('email')->searchable(),
+                \Filament\Tables\Columns\TextColumn::make('subject'),
+                \Filament\Tables\Columns\ToggleColumn::make('is_read'),
+                \Filament\Tables\Columns\TextColumn::make('created_at')->dateTime()->sortable(),
             ])
             ->filters([
                 //

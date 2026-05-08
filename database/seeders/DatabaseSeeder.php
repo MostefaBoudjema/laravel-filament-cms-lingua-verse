@@ -17,9 +17,11 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        \App\Models\User::factory()->create([
+            'name' => 'Super Admin',
+            'email' => 'admin@linguaverse.com',
+            'password' => \Illuminate\Support\Facades\Hash::make('password'),
+            'role' => 'super_admin',
         ]);
     }
 }

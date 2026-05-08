@@ -1,22 +1,19 @@
 <?php
 
-namespace App\Filament\Resources\Languages\Tables;
+namespace App\Filament\Resources\Users\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Table;
 
-class LanguagesTable
+class UsersTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                \Filament\Tables\Columns\TextColumn::make('name')->searchable(),
-                \Filament\Tables\Columns\TextColumn::make('code'),
-                \Filament\Tables\Columns\ImageColumn::make('flag'),
-                \Filament\Tables\Columns\ToggleColumn::make('is_active'),
+                //
             ])
             ->filters([
                 //

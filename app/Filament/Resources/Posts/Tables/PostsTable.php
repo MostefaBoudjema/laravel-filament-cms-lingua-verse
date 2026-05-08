@@ -13,7 +13,12 @@ class PostsTable
     {
         return $table
             ->columns([
-                //
+                \Filament\Tables\Columns\ImageColumn::make('featured_image'),
+                \Filament\Tables\Columns\TextColumn::make('title')->searchable()->limit(50),
+                \Filament\Tables\Columns\TextColumn::make('category.name')->label('Category'),
+                \Filament\Tables\Columns\TextColumn::make('author.name')->label('Author'),
+                \Filament\Tables\Columns\ToggleColumn::make('is_published'),
+                \Filament\Tables\Columns\TextColumn::make('published_at')->dateTime()->sortable(),
             ])
             ->filters([
                 //

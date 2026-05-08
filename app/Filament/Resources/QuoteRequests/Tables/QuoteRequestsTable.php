@@ -13,7 +13,19 @@ class QuoteRequestsTable
     {
         return $table
             ->columns([
-                //
+                \Filament\Tables\Columns\TextColumn::make('name')->searchable(),
+                \Filament\Tables\Columns\TextColumn::make('email')->searchable(),
+                \Filament\Tables\Columns\TextColumn::make('source_language'),
+                \Filament\Tables\Columns\TextColumn::make('target_language'),
+                \Filament\Tables\Columns\TextColumn::make('status')
+                    ->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        'new' => 'info',
+                        'in_progress' => 'warning',
+                        'quoted' => 'success',
+                        'completed' => 'gray',
+                    }),
+                \Filament\Tables\Columns\TextColumn::make('created_at')->dateTime()->sortable(),
             ])
             ->filters([
                 //

@@ -13,7 +13,9 @@ class SettingsTable
     {
         return $table
             ->columns([
-                //
+                \Filament\Tables\Columns\TextColumn::make('key')->searchable(),
+                \Filament\Tables\Columns\TextColumn::make('group')->badge(),
+                \Filament\Tables\Columns\TextColumn::make('updated_at')->dateTime()->sortable(),
             ])
             ->filters([
                 //
