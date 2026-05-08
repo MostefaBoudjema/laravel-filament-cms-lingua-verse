@@ -1,11 +1,70 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../vendor/filament/support/resources/views/**/*.blade.php';
+@source '../../vendor/filament/filament/resources/views/**/*.blade.php';
+@source '../../vendor/filament/forms/resources/views/**/*.blade.php';
+@source '../../vendor/filament/tables/resources/views/**/*.blade.php';
+@source '../../vendor/filament/notifications/resources/views/**/*.blade.php';
+@source '../../vendor/filament/actions/resources/views/**/*.blade.php';
+@source '../../vendor/filament/infolists/resources/views/**/*.blade.php';
+@source '../../vendor/filament/widgets/resources/views/**/*.blade.php';
+@source '../../vendor/filament/schemas/resources/views/**/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+@import "../../vendor/filament/support/resources/css/index.css";
+@import "../../vendor/filament/actions/resources/css/index.css";
+@import "../../vendor/filament/forms/resources/css/index.css";
+@import "../../vendor/filament/infolists/resources/css/index.css";
+@import "../../vendor/filament/notifications/resources/css/index.css";
+@import "../../vendor/filament/schemas/resources/css/index.css";
+@import "../../vendor/filament/tables/resources/css/index.css";
+@import "../../vendor/filament/widgets/resources/css/index.css";
+
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    /* Luxury Color Palette */
+    --color-primary-50: #fdfaf1;
+    --color-primary-100: #f9f1d8;
+    --color-primary-200: #f2e1af;
+    --color-primary-300: #e7c87c;
+    --color-primary-400: #dbab4e;
+    --color-primary-500: #c9a84c; /* LinguaVerse Gold */
+    --color-primary-600: #ae863b;
+    --color-primary-700: #916932;
+    --color-primary-800: #77552d;
+    --color-primary-900: #624629;
+    --color-primary-950: #382613;
+
+    --color-navy: #0a0e27; /* Deep Navy Base */
+
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-arabic: 'Tajawal', sans-serif;
+
+    --radius-luxury: 1.5rem;
+}
+
+@utility font-arabic {
+    font-family: var(--font-arabic);
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+[x-cloak] {
+    display: none !important;
+}
+
+/* Luxury animations & styles */
+.luxury-glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+.luxury-gradient-text {
+    @apply bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+    font-family: var(--font-arabic);
 }
