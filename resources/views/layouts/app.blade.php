@@ -34,11 +34,11 @@
                 </div>
                 
                 <div class="hidden md:flex items-center space-x-8 rtl:space-x-reverse">
-                    <a href="{{ url('/') }}" class="text-sm font-medium hover:text-gold-400 transition-colors">Home</a>
-                    <a href="{{ url('/about') }}" class="text-sm font-medium hover:text-gold-400 transition-colors">About</a>
-                    <a href="{{ url('/services') }}" class="text-sm font-medium hover:text-gold-400 transition-colors">Services</a>
-                    <a href="{{ url('/blog') }}" class="text-sm font-medium hover:text-gold-400 transition-colors">Insights</a>
-                    <a href="{{ url('/contact') }}" class="text-sm font-medium hover:text-gold-400 transition-colors">Contact</a>
+                    <a href="{{ url('/') }}" class="text-sm font-medium hover:text-gold-400 transition-colors">{{ __('Home') }}</a>
+                    <a href="{{ url('/about') }}" class="text-sm font-medium hover:text-gold-400 transition-colors">{{ __('About') }}</a>
+                    <a href="{{ url('/services') }}" class="text-sm font-medium hover:text-gold-400 transition-colors">{{ __('Services') }}</a>
+                    <a href="{{ url('/blog') }}" class="text-sm font-medium hover:text-gold-400 transition-colors">{{ __('Insights') }}</a>
+                    <a href="{{ url('/contact') }}" class="text-sm font-medium hover:text-gold-400 transition-colors">{{ __('Contact') }}</a>
                     
                     <!-- Language Switcher -->
                     <div class="flex items-center gap-2 border-l border-white/10 pl-8 rtl:border-l-0 rtl:pl-0 rtl:border-r rtl:pr-8">
@@ -50,7 +50,7 @@
                     </div>
 
                     <a href="{{ url('/quote') }}" class="btn-luxury px-6 py-2 rounded-full text-sm font-bold">
-                        Get a Quote
+                        {{ __('Get a Quote') }}
                     </a>
                 </div>
                 
@@ -83,16 +83,16 @@
                     </p>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-6">Quick Links</h4>
+                    <h4 class="text-white font-bold mb-6">{{ __('Quick Links') }}</h4>
                     <ul class="space-y-4 text-sm text-slate-400">
-                        <li><a href="#" class="hover:text-gold-400 transition-colors">Our Story</a></li>
-                        <li><a href="#" class="hover:text-gold-400 transition-colors">Specialized Services</a></li>
-                        <li><a href="#" class="hover:text-gold-400 transition-colors">Global Network</a></li>
-                        <li><a href="#" class="hover:text-gold-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="{{ url('/about') }}" class="hover:text-gold-400 transition-colors">{{ __('Our Story') }}</a></li>
+                        <li><a href="{{ url('/services') }}" class="hover:text-gold-400 transition-colors">{{ __('Specialized Services') }}</a></li>
+                        <li><a href="{{ url('/about#network') }}" class="hover:text-gold-400 transition-colors">{{ __('Global Network') }}</a></li>
+                        <li><a href="#" class="hover:text-gold-400 transition-colors">{{ __('Terms of Service') }}</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-bold mb-6">Contact Us</h4>
+                    <h4 class="text-white font-bold mb-6">{{ __('Contact Us') }}</h4>
                     <ul class="space-y-4 text-sm text-slate-400">
                         <li>London, UK | Dubai, UAE</li>
                         <li>concierge@linguaverse.com</li>

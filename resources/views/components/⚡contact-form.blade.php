@@ -17,13 +17,21 @@ new class extends Component
             'message' => 'required|min:10',
         ]);
 
-        Contact::create([
+        $contact = Contact::create([
             'name' => $this->name,
             'email' => $this->email,
             'phone' => $this->phone,
             'subject' => $this->subject,
             'message' => $this->message,
         ]);
+
+        // Send Notification Email
+        try {
+            \Illuminate\Support\Facades\Mail::to('concierge@linguaverse.com')
+                ->send(new \App\Mail\ContactInquiry($contact));
+        } catch (\Exception $e) {
+            \Illuminate\Support\Facades\Log::error('Contact Email failed: ' . $e->getMessage());
+        }
 
         $this->success = true;
         $this->reset(['name', 'email', 'phone', 'subject', 'message']);

@@ -13,21 +13,21 @@
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <div class="hero-content">
-                <span class="inline-block text-gold-500 font-bold tracking-[0.3em] uppercase text-xs mb-6 opacity-0 translate-y-4">Defining Global Standards</span>
+                <span class="inline-block text-gold-500 font-bold tracking-[0.3em] uppercase text-xs mb-6 opacity-0 translate-y-4">{{ __('Defining Global Standards') }}</span>
                 <h1 class="text-5xl md:text-8xl font-bold tracking-tight text-white mb-8 opacity-0 translate-y-8 leading-tight">
-                    Your Bridge to <br/>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-500 to-gold-200">World Markets</span>
+                    {{ __('Your Bridge to') }} <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-500 to-gold-200">{{ __('World Markets') }}</span>
                 </h1>
                 <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 opacity-0 translate-y-8 leading-relaxed">
-                    Premium language services for the world's most ambitious brands. 
-                    Merging technical precision with cultural elegance.
+                    {{ __('Premium language services for the world\'s most ambitious brands.') }} 
+                    {{ __('Merging technical precision with cultural elegance.') }}
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-0 translate-y-8">
                     <a href="{{ url('/quote') }}" class="btn-luxury px-10 py-4 rounded-full text-sm font-bold shadow-2xl shadow-gold-900/20">
-                        Start Your Project
+                        {{ __('Start Your Project') }}
                     </a>
                     <a href="{{ url('/services') }}" class="px-10 py-4 rounded-full text-sm font-bold text-white border border-white/10 hover:bg-white/5 transition-all">
-                        View Services
+                        {{ __('View Services') }}
                     </a>
                 </div>
             </div>
@@ -35,7 +35,7 @@
 
         <!-- Scroll Indicator -->
         <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500">
-            <span class="text-[10px] uppercase tracking-widest">Explore</span>
+            <span class="text-[10px] uppercase tracking-widest">{{ __('Explore') }}</span>
             <div class="w-[1px] h-12 bg-gradient-to-b from-gold-500/50 to-transparent"></div>
         </div>
     </section>
@@ -45,11 +45,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
                 <div>
-                    <span class="text-gold-500 font-bold uppercase tracking-widest text-xs">Specialized Solutions</span>
-                    <h2 class="text-4xl md:text-5xl font-bold mt-4">Elevating Communication</h2>
+                    <span class="text-gold-500 font-bold uppercase tracking-widest text-xs">{{ __('Specialized Solutions') }}</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mt-4">{{ __('Elevating Communication') }}</h2>
                 </div>
                 <p class="text-slate-400 max-w-md leading-relaxed">
-                    Our team of master linguists provides bespoke services tailored to the specific needs of your industry.
+                    {{ __('Our team of master linguists provides bespoke services tailored to the specific needs of your industry.') }}
                 </p>
             </div>
 
@@ -64,7 +64,7 @@
                             {{ Str::limit(strip_tags($service->getTranslation('description', app()->getLocale())), 100) }}
                         </p>
                         <a href="{{ url('/services') }}" class="text-xs font-bold uppercase tracking-widest text-gold-500 group-hover:text-white flex items-center gap-2">
-                            Learn More <span class="group-hover:translate-x-1 transition-transform">→</span>
+                            {{ __('Learn More') }} <span class="group-hover:translate-x-1 transition-transform">→</span>
                         </a>
                     </div>
                 @empty
@@ -87,19 +87,19 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-12">
                 <div>
                     <div class="text-4xl md:text-5xl font-bold text-white mb-2">150+</div>
-                    <div class="text-xs uppercase tracking-widest text-gold-500">Languages</div>
+                    <div class="text-xs uppercase tracking-widest text-gold-500">{{ __('Languages') }}</div>
                 </div>
                 <div>
                     <div class="text-4xl md:text-5xl font-bold text-white mb-2">10k+</div>
-                    <div class="text-xs uppercase tracking-widest text-gold-500">Projects Done</div>
+                    <div class="text-xs uppercase tracking-widest text-gold-500">{{ __('Projects Done') }}</div>
                 </div>
                 <div>
                     <div class="text-4xl md:text-5xl font-bold text-white mb-2">99.9%</div>
-                    <div class="text-xs uppercase tracking-widest text-gold-500">Accuracy</div>
+                    <div class="text-xs uppercase tracking-widest text-gold-500">{{ __('Accuracy') }}</div>
                 </div>
                 <div>
                     <div class="text-4xl md:text-5xl font-bold text-white mb-2">24/7</div>
-                    <div class="text-xs uppercase tracking-widest text-gold-500">Support</div>
+                    <div class="text-xs uppercase tracking-widest text-gold-500">{{ __('Support') }}</div>
                 </div>
             </div>
         </div>

@@ -58,7 +58,7 @@ new class extends Component
 
         $path = $this->attachment ? $this->attachment->store('quotes', 'public') : null;
 
-        QuoteRequest::create([
+        $quote = QuoteRequest::create([
             'name' => $this->name,
             'email' => $this->email,
             'phone' => $this->phone,
@@ -70,6 +70,15 @@ new class extends Component
             'attachment' => $path,
             'status' => 'new',
         ]);
+
+        // Send Notification Email
+        try {
+            \Illuminate\Support\Facades\Mail::to('concierge@linguaverse.com')
+                ->send(new \App\Mail\QuoteReceived($quote));
+        } catch (\Exception $e) {
+            // Log error or handle gracefully
+            \Illuminate\Support\Facades\Log::error('Quote Email failed: ' . $e->getMessage());
+        }
 
         $this->step = 4;
     }
