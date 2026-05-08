@@ -33,4 +33,21 @@ class PageController extends Controller
     {
         return view('contact');
     }
+
+    public function quote()
+    {
+        return view('quote');
+    }
+
+    public function blog()
+    {
+        $posts = Post::where('is_published', true)->orderBy('published_at', 'desc')->paginate(9);
+        return view('blog.index', compact('posts'));
+    }
+
+    public function blogPost($slug)
+    {
+        $post = Post::where('slug', $slug)->firstOrFail();
+        return view('blog.show', compact('post'));
+    }
 }

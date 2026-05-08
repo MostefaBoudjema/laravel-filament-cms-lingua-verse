@@ -27,22 +27,38 @@
     /* Luxury Color Palette */
     --color-primary-50: #fdfaf1;
     --color-primary-100: #f9f1d8;
-    --color-primary-200: #f2e1af;
-    --color-primary-300: #e7c87c;
-    --color-primary-400: #dbab4e;
-    --color-primary-500: #c9a84c; /* LinguaVerse Gold */
-    --color-primary-600: #ae863b;
-    --color-primary-700: #916932;
-    --color-primary-800: #77552d;
-    --color-primary-900: #624629;
-    --color-primary-950: #382613;
+    --color-gold-200: #f2e1af;
+    --color-gold-300: #e7c87c;
+    --color-gold-400: #dbab4e;
+    --color-gold-500: #c9a84c; 
+    --color-gold-600: #ae863b;
+    --color-gold-900: #624629;
 
-    --color-navy: #0a0e27; /* Deep Navy Base */
+    --color-navy-800: #1a2040;
+    --color-navy-900: #0f1430;
+    --color-navy-950: #0a0e27;
 
-    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-    --font-arabic: 'Tajawal', sans-serif;
+    --font-inter: 'Inter', sans-serif;
+    --font-tajawal: 'Tajawal', sans-serif;
+}
 
-    --radius-luxury: 1.5rem;
+@utility glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.5rem;
+}
+
+@utility btn-luxury {
+    background: linear-gradient(135deg, var(--color-gold-400), var(--color-gold-600));
+    color: var(--color-navy-950);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
 }
 
 @utility font-arabic {
