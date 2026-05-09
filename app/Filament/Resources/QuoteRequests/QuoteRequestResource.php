@@ -20,6 +20,17 @@ class QuoteRequestResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    public static function getModelLabel(): string
+    {
+        return __('Quote Request');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('Quote Requests');
+    }
+
+
     public static function form(Schema $schema): Schema
     {
         return QuoteRequestForm::configure($schema);

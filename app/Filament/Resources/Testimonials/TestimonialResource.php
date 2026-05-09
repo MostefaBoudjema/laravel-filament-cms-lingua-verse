@@ -20,6 +20,17 @@ class TestimonialResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    public static function getModelLabel(): string
+    {
+        return __('Testimonial');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('Testimonials');
+    }
+
+
     public static function form(Schema $schema): Schema
     {
         return TestimonialForm::configure($schema);

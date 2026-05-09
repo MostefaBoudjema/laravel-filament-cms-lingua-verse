@@ -20,6 +20,17 @@ class ContactResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    public static function getModelLabel(): string
+    {
+        return __('Contact');
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return __('Contacts');
+    }
+
+
     public static function form(Schema $schema): Schema
     {
         return ContactForm::configure($schema);
