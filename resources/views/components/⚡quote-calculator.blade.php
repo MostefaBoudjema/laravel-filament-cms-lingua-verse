@@ -99,7 +99,7 @@ new class extends Component
                     ])>
                         {{ $i }}
                     </div>
-                    <span class="text-[10px] uppercase tracking-widest mt-2 text-slate-500">Step {{ $i }}</span>
+                    <span class="text-[10px] uppercase tracking-widest mt-2 text-slate-500">{{ __('Step') }} {{ $i }}</span>
                 </div>
             @endforeach
         </div>
@@ -111,69 +111,69 @@ new class extends Component
         @if($step == 1)
             <div wire:key="step1" class="space-y-6">
                 <div>
-                    <h2 class="text-2xl font-bold mb-2">Personal Details</h2>
-                    <p class="text-sm text-slate-400 mb-8">Tell us who we'll be working with.</p>
+                    <h2 class="text-2xl font-bold mb-2">{{ __('Personal Details') }}</h2>
+                    <p class="text-sm text-slate-400 mb-8">{{ __('Tell us who we\'ll be working with.') }}</p>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="space-y-2">
-                        <label class="text-xs uppercase tracking-widest text-gold-500 font-bold">Full Name</label>
-                        <input type="text" wire:model="name" class="w-full bg-navy-950/50 border border-white/10 rounded-lg px-4 py-3 focus:border-gold-500 focus:ring-0 transition-colors" placeholder="John Doe">
+                        <label class="text-xs uppercase tracking-widest text-gold-500 font-bold">{{ __('Full Name') }}</label>
+                        <input type="text" wire:model="name" class="w-full bg-navy-950/50 border border-white/10 rounded-lg px-4 py-3 focus:border-gold-500 focus:ring-0 transition-colors" placeholder="{{ __('John Doe') }}">
                         @error('name') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                     </div>
                     <div class="space-y-2">
-                        <label class="text-xs uppercase tracking-widest text-gold-500 font-bold">Email Address</label>
-                        <input type="email" wire:model="email" class="w-full bg-navy-950/50 border border-white/10 rounded-lg px-4 py-3 focus:border-gold-500 focus:ring-0 transition-colors" placeholder="john@example.com">
+                        <label class="text-xs uppercase tracking-widest text-gold-500 font-bold">{{ __('Email Address') }}</label>
+                        <input type="email" wire:model="email" class="w-full bg-navy-950/50 border border-white/10 rounded-lg px-4 py-3 focus:border-gold-500 focus:ring-0 transition-colors" placeholder="{{ __('john@example.com') }}">
                         @error('email') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                     </div>
                     <div class="space-y-2">
-                        <label class="text-xs uppercase tracking-widest text-gold-500 font-bold">Phone Number</label>
-                        <input type="text" wire:model="phone" class="w-full bg-navy-950/50 border border-white/10 rounded-lg px-4 py-3 focus:border-gold-500 focus:ring-0 transition-colors" placeholder="+1 (555) 000-0000">
+                        <label class="text-xs uppercase tracking-widest text-gold-500 font-bold">{{ __('Phone Number') }}</label>
+                        <input type="text" wire:model="phone" class="w-full bg-navy-950/50 border border-white/10 rounded-lg px-4 py-3 focus:border-gold-500 focus:ring-0 transition-colors" placeholder="{{ __('+1 (555) 000-0000') }}">
                     </div>
                     <div class="space-y-2">
-                        <label class="text-xs uppercase tracking-widest text-gold-500 font-bold">Company (Optional)</label>
-                        <input type="text" wire:model="company" class="w-full bg-navy-950/50 border border-white/10 rounded-lg px-4 py-3 focus:border-gold-500 focus:ring-0 transition-colors" placeholder="Acme Corp">
+                        <label class="text-xs uppercase tracking-widest text-gold-500 font-bold">{{ __('Company (Optional)') }}</label>
+                        <input type="text" wire:model="company" class="w-full bg-navy-950/50 border border-white/10 rounded-lg px-4 py-3 focus:border-gold-500 focus:ring-0 transition-colors" placeholder="{{ __('Acme Corp') }}">
                     </div>
                 </div>
 
                 <div class="pt-8 flex justify-end">
                     <button wire:click="nextStep" class="btn-luxury px-10 py-3 rounded-full text-sm font-bold">
-                        Next: Project Details
+                        {{ __('Next: Project Details') }}
                     </button>
                 </div>
             </div>
         @elseif($step == 2)
             <div wire:key="step2" class="space-y-6">
                 <div>
-                    <h2 class="text-2xl font-bold mb-2">Project Scope</h2>
-                    <p class="text-sm text-slate-400 mb-8">Define the linguistic parameters of your request.</p>
+                    <h2 class="text-2xl font-bold mb-2">{{ __('Project Scope') }}</h2>
+                    <p class="text-sm text-slate-400 mb-8">{{ __('Define the linguistic parameters of your request.') }}</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="space-y-2">
-                        <label class="text-xs uppercase tracking-widest text-gold-500 font-bold">Source Language</label>
+                        <label class="text-xs uppercase tracking-widest text-gold-500 font-bold">{{ __('Source Language') }}</label>
                         <select wire:model="source_language" class="w-full bg-navy-950/50 border border-white/10 rounded-lg px-4 py-3 focus:border-gold-500 focus:ring-0 transition-colors appearance-none">
-                            <option value="">Select Language</option>
-                            <option value="English">English</option>
-                            <option value="Arabic">Arabic</option>
-                            <option value="French">French</option>
-                            <option value="German">German</option>
+                            <option value="">{{ __('Select Language') }}</option>
+                            <option value="English">{{ __('English') }}</option>
+                            <option value="Arabic">{{ __('Arabic') }}</option>
+                            <option value="French">{{ __('French') }}</option>
+                            <option value="German">{{ __('German') }}</option>
                         </select>
                         @error('source_language') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                     </div>
                     <div class="space-y-2">
-                        <label class="text-xs uppercase tracking-widest text-gold-500 font-bold">Target Language</label>
+                        <label class="text-xs uppercase tracking-widest text-gold-500 font-bold">{{ __('Target Language') }}</label>
                         <select wire:model="target_language" class="w-full bg-navy-950/50 border border-white/10 rounded-lg px-4 py-3 focus:border-gold-500 focus:ring-0 transition-colors appearance-none">
-                            <option value="">Select Language</option>
-                            <option value="Arabic">Arabic</option>
-                            <option value="English">English</option>
-                            <option value="French">French</option>
-                            <option value="German">German</option>
+                            <option value="">{{ __('Select Language') }}</option>
+                            <option value="Arabic">{{ __('Arabic') }}</option>
+                            <option value="English">{{ __('English') }}</option>
+                            <option value="French">{{ __('French') }}</option>
+                            <option value="German">{{ __('German') }}</option>
                         </select>
                         @error('target_language') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
                     </div>
                     <div class="md:col-span-2 space-y-2">
-                        <label class="text-xs uppercase tracking-widest text-gold-500 font-bold">Service Category</label>
+                        <label class="text-xs uppercase tracking-widest text-gold-500 font-bold">{{ __('Service Category') }}</label>
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                             @foreach(['Legal', 'Medical', 'Marketing', 'Technical'] as $type)
                                 <label @class([
@@ -182,7 +182,7 @@ new class extends Component
                                     'border-white/10 bg-navy-950/50 text-slate-400 hover:border-gold-500/50' => $service_type != $type
                                 ])>
                                     <input type="radio" wire:model="service_type" value="{{ $type }}" class="hidden">
-                                    <span class="text-xs font-bold uppercase tracking-widest">{{ $type }}</span>
+                                    <span class="text-xs font-bold uppercase tracking-widest">{{ __($type) }}</span>
                                 </label>
                             @endforeach
                         </div>
@@ -192,40 +192,40 @@ new class extends Component
 
                 <div class="pt-8 flex justify-between">
                     <button wire:click="prevStep" class="px-8 py-3 rounded-full text-sm font-bold border border-white/10 hover:bg-white/5">
-                        Back
+                        {{ __('Back') }}
                     </button>
                     <button wire:click="nextStep" class="btn-luxury px-10 py-3 rounded-full text-sm font-bold">
-                        Next: Finalize
+                        {{ __('Next: Finalize') }}
                     </button>
                 </div>
             </div>
         @elseif($step == 3)
             <div wire:key="step3" class="space-y-6">
                 <div>
-                    <h2 class="text-2xl font-bold mb-2">Final Touches</h2>
-                    <p class="text-sm text-slate-400 mb-8">Add any additional requirements and upload your documents.</p>
+                    <h2 class="text-2xl font-bold mb-2">{{ __('Final Touches') }}</h2>
+                    <p class="text-sm text-slate-400 mb-8">{{ __('Add any additional requirements and upload your documents.') }}</p>
                 </div>
 
                 <div class="space-y-6">
                     <div class="space-y-2">
-                        <label class="text-xs uppercase tracking-widest text-gold-500 font-bold">Detailed Instructions</label>
-                        <textarea wire:model="message" rows="4" class="w-full bg-navy-950/50 border border-white/10 rounded-lg px-4 py-3 focus:border-gold-500 focus:ring-0 transition-colors" placeholder="Tell us more about your project goals..."></textarea>
+                        <label class="text-xs uppercase tracking-widest text-gold-500 font-bold">{{ __('Detailed Instructions') }}</label>
+                        <textarea wire:model="message" rows="4" class="w-full bg-navy-950/50 border border-white/10 rounded-lg px-4 py-3 focus:border-gold-500 focus:ring-0 transition-colors" placeholder="{{ __('Tell us more about your project goals...') }}"></textarea>
                     </div>
 
                     <div class="space-y-2">
-                        <label class="text-xs uppercase tracking-widest text-gold-500 font-bold">Upload Documents</label>
+                        <label class="text-xs uppercase tracking-widest text-gold-500 font-bold">{{ __('Upload Documents') }}</label>
                         <div class="relative group">
                             <input type="file" wire:model="attachment" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10">
                             <div class="border-2 border-dashed border-white/10 rounded-2xl p-12 text-center group-hover:border-gold-500/50 transition-all">
                                 <div class="w-16 h-16 bg-gold-500/10 rounded-full flex items-center justify-center mx-auto mb-4 text-gold-500">
                                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
                                 </div>
-                                <p class="text-sm font-bold text-white mb-1">Click to upload or drag and drop</p>
-                                <p class="text-xs text-slate-500">PDF, DOCX, ZIP (Max. 10MB)</p>
+                                <p class="text-sm font-bold text-white mb-1">{{ __('Click to upload or drag and drop') }}</p>
+                                <p class="text-xs text-slate-500">{{ __('PDF, DOCX, ZIP (Max. 10MB)') }}</p>
                                 
                                 @if($attachment)
                                     <div class="mt-4 p-2 bg-gold-500/20 rounded-lg text-xs text-gold-400 font-bold">
-                                        Selected: {{ $attachment->getClientOriginalName() }}
+                                        {{ __('Selected:') }} {{ $attachment->getClientOriginalName() }}
                                     </div>
                                 @endif
                             </div>
@@ -236,10 +236,10 @@ new class extends Component
 
                 <div class="pt-8 flex justify-between">
                     <button wire:click="prevStep" class="px-8 py-3 rounded-full text-sm font-bold border border-white/10 hover:bg-white/5">
-                        Back
+                        {{ __('Back') }}
                     </button>
                     <button wire:click="submit" class="btn-luxury px-12 py-4 rounded-full text-sm font-bold">
-                        Submit Request
+                        {{ __('Submit Request') }}
                     </button>
                 </div>
             </div>
@@ -248,12 +248,12 @@ new class extends Component
                 <div class="w-20 h-20 bg-gold-500 rounded-full flex items-center justify-center mx-auto mb-8 shadow-[0_0_40px_rgba(201,168,76,0.4)]">
                     <svg class="w-10 h-10 text-navy-950" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
                 </div>
-                <h2 class="text-3xl font-bold mb-4">Request Received</h2>
+                <h2 class="text-3xl font-bold mb-4">{{ __('Request Received') }}</h2>
                 <p class="text-slate-400 max-w-sm mx-auto mb-12">
-                    Thank you, <span class="text-white font-bold">{{ $name }}</span>. Our concierge team has been notified and will review your project details immediately.
+                    {{ __('Thank you,') }} <span class="text-white font-bold">{{ $name }}</span>{{ __('. Our concierge team has been notified and will review your project details immediately.') }}
                 </p>
                 <a href="{{ url('/') }}" class="text-xs font-bold uppercase tracking-widest text-gold-500 hover:text-white transition-colors">
-                    Return to Homepage
+                    {{ __('Return to Homepage') }}
                 </a>
             </div>
         @endif

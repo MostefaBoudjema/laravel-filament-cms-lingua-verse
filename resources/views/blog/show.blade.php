@@ -23,7 +23,7 @@
                 </div>
                 <div class="text-left">
                     <div class="text-white font-bold text-sm">{{ $post->author->name }}</div>
-                    <div class="text-slate-500 text-[10px] uppercase tracking-widest">Global Insights Editor</div>
+                    <div class="text-slate-500 text-[10px] uppercase tracking-widest">{{ __('Global Insights Editor') }}</div>
                 </div>
             </div>
         </header>
@@ -59,7 +59,7 @@
             <!-- Back to Blog -->
             <div class="mt-16 text-center">
                 <a href="{{ route('blog') }}" class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-gold-500 hover:text-white transition-all">
-                    ← Back to all insights
+                    ← {{ __('Back to all insights') }}
                 </a>
             </div>
         </div>
@@ -68,7 +68,7 @@
     <!-- Recommended Posts -->
     <section class="py-24 bg-navy-900/30">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold mb-12">Continue Reading</h2>
+            <h2 class="text-3xl font-bold mb-12">{{ __('Continue Reading') }}</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
                 <!-- We could query similar posts here -->
             </div>

@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
-@section('title', 'Global Insights & Linguistic Excellence')
+@section('title', __('Global Insights & Linguistic Excellence'))
 
 @section('content')
     <section class="relative py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl mb-16">
-                <span class="text-gold-500 font-bold uppercase tracking-widest text-xs mb-4 block">LinguaVerse Insights</span>
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">Thought <span class="text-gold-400">Leadership</span></h1>
+                <span class="text-gold-500 font-bold uppercase tracking-widest text-xs mb-4 block">{{ __('LinguaVerse Insights') }}</span>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">{{ __('Thought') }} <span class="text-gold-400">{{ __('Leadership') }}</span></h1>
                 <p class="text-slate-400 text-lg leading-relaxed">
-                    Exploring the intersection of language, technology, and global business. Discover our latest perspectives on cultural intelligence and technical precision.
+                    {{ __('Exploring the intersection of language, technology, and global business. Discover our latest perspectives on cultural intelligence and technical precision.') }}
                 </p>
             </div>
 
@@ -41,7 +41,7 @@
                                 {{ Str::limit(strip_tags($post->getTranslation('body', app()->getLocale())), 120) }}
                             </p>
                             <a href="{{ route('blog.post', $post->slug) }}" class="inline-flex items-center text-xs font-bold uppercase tracking-widest text-gold-500 group-hover:text-white transition-all">
-                                Read Insight <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                                {{ __('Read Insight') }} <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
                             </a>
                         </div>
                     </article>

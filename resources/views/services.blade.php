@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Our Specialized Services')
+@section('title', __('Our Specialized Services'))
 
 @section('content')
     <!-- Hero Section -->
@@ -11,13 +11,13 @@
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="max-w-3xl">
-                <span class="text-gold-500 font-bold uppercase tracking-[0.2em] text-xs mb-4 inline-block">Bespoke Solutions</span>
+                <span class="text-gold-500 font-bold uppercase tracking-[0.2em] text-xs mb-4 inline-block">{{ __('Bespoke Solutions') }}</span>
                 <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white leading-tight">
-                    Specialized Expertise for <br/>
-                    <span class="text-gold-400">Global Excellence</span>
+                    {{ __('Specialized Expertise for') }} <br/>
+                    <span class="text-gold-400">{{ __('Global Excellence') }}</span>
                 </h1>
                 <p class="text-slate-400 text-lg leading-relaxed">
-                    At LinguaVerse, we don't just translate words; we translate meaning, culture, and technical intent. Our specialized divisions ensure your content is handled by subject-matter experts.
+                    {{ __("At LinguaVerse, we don't just translate words; we translate meaning, culture, and technical intent. Our specialized divisions ensure your content is handled by subject-matter experts.") }}
                 </p>
             </div>
         </div>
@@ -63,7 +63,7 @@
                                 @endif
 
                                 <a href="{{ url('/quote?service=' . $service->slug) }}" class="inline-flex items-center text-sm font-bold text-gold-400 hover:text-white transition-colors group">
-                                    Request this service
+                                    {{ __('Request this service') }}
                                     <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                                 </a>
                             </div>
@@ -79,13 +79,13 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="glass-card p-12 md:p-20 text-center relative overflow-hidden border-gold-500/30">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-gold-500/10 blur-3xl rounded-full"></div>
-                <h2 class="text-3xl md:text-5xl font-bold mb-8 relative z-10">Ready to expand your reach?</h2>
+                <h2 class="text-3xl md:text-5xl font-bold mb-8 relative z-10">{{ __('Ready to expand your reach?') }}</h2>
                 <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-12 relative z-10">
-                    Join hundreds of global organizations that trust LinguaVerse for their mission-critical communications.
+                    {{ __('Join hundreds of global organizations that trust LinguaVerse for their mission-critical communications.') }}
                 </p>
                 <div class="relative z-10">
                     <a href="{{ url('/quote') }}" class="btn-luxury px-12 py-5 rounded-full text-lg font-bold shadow-2xl">
-                        Request a Personalized Quote
+                        {{ __('Request a Personalized Quote') }}
                     </a>
                 </div>
             </div>

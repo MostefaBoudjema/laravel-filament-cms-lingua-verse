@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Request a Premium Quote')
+@section('title', __('Request a Premium Quote'))
 
 @section('content')
     <section class="relative py-24 min-h-screen">
@@ -12,10 +12,10 @@
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16">
-                <span class="text-gold-500 font-bold uppercase tracking-widest text-xs mb-4 block">Concierge Service</span>
-                <h1 class="text-4xl md:text-5xl font-bold mb-6">Quote Calculator</h1>
+                <span class="text-gold-500 font-bold uppercase tracking-widest text-xs mb-4 block">{{ __('Concierge Service') }}</span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">{{ __('Quote Calculator') }}</h1>
                 <p class="text-slate-400 max-w-2xl mx-auto leading-relaxed">
-                    Receive a tailored estimate for your project. Our experts analyze each request to ensure the highest standard of accuracy and value.
+                    {{ __('Receive a tailored estimate for your project. Our experts analyze each request to ensure the highest standard of accuracy and value.') }}
                 </p>
             </div>
 
